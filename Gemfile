@@ -16,4 +16,8 @@ group :test do
   gem 'database_cleaner'
 end
 
+group :development, :test do
+  gem 'rspec-rails'
+end
+
 gem 'jquery-rails'
