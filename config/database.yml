@@ -8,6 +8,9 @@ development:
   database: property_portal_dev
   <<: *global
   
-test:
+test: &test
   database: property_portal_test
   <<: *global
+
+cucumber:
+  <<: *test
