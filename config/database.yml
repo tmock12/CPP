@@ -1,0 +1,13 @@
+global: &global
+  adapter: postgresql
+  min_messages: warning
+  encoding: unicode
+  host: localhost
+
+development: 
+  database: property_portal_dev
+  <<: *global
+  
+test:
+  database: property_portal_test
+  <<: *global
