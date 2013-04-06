@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   def create
     if user && user.authenticate(params[:password])
       sign_in(user, false)
-      redirect_to :properties
+      redirect_to :dashboard
     else
       flash.now[:sign_in_error] = "Your email or password are incorrect"
       render :new

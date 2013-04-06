@@ -11,7 +11,7 @@ Feature: Admin signs in
       | Email    | admin@example.com |
       | Password | secret            |
     And I press "Sign in"
-    Then I should be on the properties page
+    Then I should be on the dashboard page
     And I should see "Welcome Rita"
 
   Scenario: with invalid credentials

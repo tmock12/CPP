@@ -3,4 +3,7 @@ PropertyPortal::Application.routes.draw do
   post '/admin', to: 'sessions#create'
 
   resources :properties
+
+  get '/dashboard', to: 'users#index'
+
 end
