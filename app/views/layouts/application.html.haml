@@ -9,6 +9,7 @@
     %header
       - if current_user
         %p Welcome #{current_user.name}
+        = link_to "sign out", :sign_out
     - flash.keys.each do |type|
       .flash{ class: type }
         %p= flash[type]

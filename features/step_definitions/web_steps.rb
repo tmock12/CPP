@@ -23,3 +23,7 @@ end
 Then /^I should see "(.*?)"$/ do |text|
   page.should have_content(text)
 end
+
+When /^I follow "(.*?)"$/ do |link|
+  click_link(link)
+end
