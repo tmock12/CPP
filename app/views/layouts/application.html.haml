@@ -10,6 +10,8 @@
       - if current_user
         %p Welcome #{current_user.name}
         = link_to "sign out", :sign_out
+      = link_to "Properties for sale", for_sale_properties_path
+      = link_to "Properties for lease", for_lease_properties_path
     - flash.keys.each do |type|
       .flash{ class: type }
         %p= flash[type]

@@ -1,0 +1,10 @@
+%table
+  %thead
+    %tr
+      - ["Title", "Description"].each do |heading|
+        %th= heading
+  %tbody
+    - properties.each do |property|
+      %tr
+        %td= property.title
+        %td= property.description
