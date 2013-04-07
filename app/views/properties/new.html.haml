@@ -1,0 +1,38 @@
+= form_for property do |f|
+  %dl
+
+    %dt= f.label :title
+    %dd= f.text_field :title
+
+    %dt= f.label :description
+    %dd= f.text_area :description
+
+    %dt= f.label :street_1, "Address"
+    %dd= f.text_field :street_1
+    %dd= f.text_field :street_2
+
+    %dt= f.label :city
+    %dd= f.text_field :city
+
+    %dt= f.label :state
+    %dd= f.select :state, US_State::NAMES
+
+    %dt= f.label :zip, "Zip Code"
+    %dd= f.text_field :zip
+
+    %dt= f.label :size
+    %dd= f.text_field :size
+
+    %dt= f.label :price
+    %dd= f.text_field :price
+
+    %dt= f.label :property_type
+    %dd= f.select :property_type, property_type_options_for_select
+
+    %dt= f.label :listing_type
+    %dd= f.select :listing_type, listing_type_options_for_select
+
+    %dt= f.label :bank_owned, 'Bank owned?'
+    %dd= f.check_box :bank_owned
+
+    = f.submit "Add Property"

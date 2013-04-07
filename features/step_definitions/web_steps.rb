@@ -27,3 +27,11 @@ end
 When /^I follow "(.*?)"$/ do |link|
   click_link(link)
 end
+
+When /^I select "(.*?)" from "(.*?)"$/ do |value, field|
+  select(value, :from => field)
+end
+
+When /^I check "([^"]*)"$/ do |checkbox_label|
+  check(checkbox_label)
+end

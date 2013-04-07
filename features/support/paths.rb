@@ -5,6 +5,8 @@ module NavigationHelpers
       '/'
     when /^the login page$/
       '/admin'
+    when /^that properties show page$/
+      property_path(@property || Property.last)
     else
       begin
         page_name =~ /^the (.*) page$/
