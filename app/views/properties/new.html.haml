@@ -29,8 +29,11 @@
     %dt= f.label :property_type
     %dd= f.select :property_type, property_type_options_for_select
 
-    %dt= f.label :listing_type
-    %dd= f.select :listing_type, listing_type_options_for_select
+    %dt= f.label :lease
+    %dd= f.check_box :lease
+
+    %dt= f.label :sale
+    %dd= f.check_box :sale
 
     %dt= f.label :bank_owned, 'Bank owned?'
     %dd= f.check_box :bank_owned

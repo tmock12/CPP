@@ -3,8 +3,8 @@ class PropertiesController < ApplicationController
   respond_to :html
 
   expose(:property)
-  expose(:properties_for_sale) { Property.where(listing_type: 'For Sale') }
-  expose(:properties_for_lease) { Property.where(listing_type: 'Lease') }
+  expose(:properties_for_sale) { Property.where(sale: true) }
+  expose(:properties_for_lease) { Property.where(lease: true) }
 
   def create
     property.save

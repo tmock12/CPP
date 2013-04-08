@@ -14,7 +14,7 @@ Feature: Admin creates property
       | Price                  | $1000 a month                  |
     And I select "Georgia" from "State"
     And I select "Office" from "Property type"
-    And I select "Lease" from "Listing type"
+    And I check "Lease"
     And I check "Bank owned?"
     When I press "Add Property"
     Then I should be on that properties show page
