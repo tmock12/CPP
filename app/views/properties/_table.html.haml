@@ -6,5 +6,5 @@
   %tbody
     - properties.each do |property|
       %tr
-        %td= property.title
+        %td= link_to property.title, property
         %td= property.description

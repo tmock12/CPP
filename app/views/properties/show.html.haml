@@ -1,0 +1,27 @@
+%h2= deco_property.title
+%p= deco_property.description
+
+%table
+  %tbody
+
+    %tr
+      %td= deco_property.bank_owned
+    %tr
+      %td= deco_property.lease
+    %tr
+      %td= deco_property.sale
+    %tr
+      %td
+        %strong Location:
+      %td
+        = deco_property.formatted_address
+    %tr
+      %td
+        %strong Size:
+      %td
+        = deco_property.size
+    %tr
+      %td
+        %strong Price:
+      %td
+        = deco_property.price
