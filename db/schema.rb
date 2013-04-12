@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130407234730) do
+ActiveRecord::Schema.define(:version => 20130412185901) do
 
   create_table "properties", :force => true do |t|
     t.string   "title"
@@ -25,10 +25,14 @@ ActiveRecord::Schema.define(:version => 20130407234730) do
     t.string   "price"
     t.string   "property_type"
     t.boolean  "bank_owned"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
     t.boolean  "lease"
     t.boolean  "sale"
+    t.string   "attached_image_file_name"
+    t.string   "attached_image_content_type"
+    t.integer  "attached_image_file_size"
+    t.datetime "attached_image_updated_at"
   end
 
   create_table "users", :force => true do |t|

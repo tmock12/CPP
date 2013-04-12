@@ -16,5 +16,7 @@ Feature: Admin creates property
     And I select "Office" from "Property type"
     And I check "Lease"
     And I check "Bank owned?"
+    And I attach the file at "features/support/test-image.jpg" to "Attached image"
     When I press "Add Property"
     Then I should be on that properties show page
+    And I should see the image "test-image.jpg"
