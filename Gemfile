@@ -7,6 +7,7 @@ gem 'fabrication'
 gem 'haml-rails'
 gem 'decent_exposure'
 gem 'draper'
+gem 'paperclip'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
