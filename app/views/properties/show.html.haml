@@ -3,27 +3,25 @@
 =link_to image_tag(deco_property.attached_image.url(:small)),
   image_path(deco_property.attached_image.url)
 
-%table
-  %tbody
+%dl
+  %dd= deco_property.bank_owned
+  %dd= deco_property.lease
+  %dd= deco_property.sale
 
-    %tr
-      %td= deco_property.bank_owned
-    %tr
-      %td= deco_property.lease
-    %tr
-      %td= deco_property.sale
-    %tr
-      %td
-        %strong Location:
-      %td
-        = deco_property.formatted_address
-    %tr
-      %td
-        %strong Size:
-      %td
-        = deco_property.size
-    %tr
-      %td
-        %strong Price:
-      %td
-        = deco_property.price
+  %dt
+    %strong Location:
+  %dd= deco_property.formatted_address
+
+  %dt
+    %strong Size:
+  %dd= deco_property.size
+
+  %dt
+    %strong Price:
+  %dd= deco_property.price
+
+  %dt
+    %strong Contact:
+  - deco_property.contacts.each do |contact|
+    %dd
+      = [contact.name, contact.cell, contact.email].select(&:present?).join(', ')

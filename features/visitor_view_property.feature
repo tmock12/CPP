@@ -13,6 +13,8 @@ Feature: Visitor view property
       | Sale        | true                           |
       | Lease       | false                          |
       | Bank Owned  | true                           |
+    And that property has the following contact:
+      | name | Head Honcho |
     When I am on the for sale properties page
     And I follow "Awesome Building"
     Then I should be on that properties show page
@@ -28,3 +30,4 @@ Feature: Visitor view property
       | GA                             |
       | For Sale                       |
       | Bank Owned                     |
+      | Head Honcho                    |
