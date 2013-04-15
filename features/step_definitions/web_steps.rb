@@ -24,6 +24,10 @@ Then /^I should see "(.*?)"$/ do |text|
   page.should have_content(text)
 end
 
+Then /^I should see a link to "(.*?)"$/ do |text|
+  find_link(text)
+end
+
 Then /^I should see the following:$/ do |table|
   table.rows.each do |row|
     row.each do |col|

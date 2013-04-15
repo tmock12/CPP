@@ -1,7 +1,11 @@
-%table
-  %tbody
-    - properties.each do |property|
-      %tr
-        %td= image_tag property.attached_image.url(:small)
-        %td= link_to property.title, property
-        %td= property.description
+- properties.each do |property|
+  .property
+    .property_image
+      = image_tag property.attached_image.url(:small)
+    %ul
+      %li
+        %h2= property.title
+      %li
+        %p= property.description
+      %li
+        =link_to "View PDF", property.attached_pdf.url

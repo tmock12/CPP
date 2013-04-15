@@ -2,6 +2,7 @@
 %p= deco_property.description
 =link_to image_tag(deco_property.attached_image.url(:small)),
   image_path(deco_property.attached_image.url)
+=link_to "View PDF", property.attached_pdf.url
 
 %dl
   %dd= deco_property.bank_owned

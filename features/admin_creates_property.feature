@@ -23,6 +23,8 @@ Feature: Admin creates property
     And I check "Lease"
     And I check "Bank owned?"
     And I attach the file at "features/support/test-image.jpg" to "Attached image"
+    And I attach the file at "features/support/test-pdf.pdf" to "Attached pdf"
     When I press "Add Property"
     Then I should be on that properties show page
     And I should see the image "test-image.jpg"
+    And I should see a link to "View PDF"

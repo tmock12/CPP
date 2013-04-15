@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130413153054) do
+ActiveRecord::Schema.define(:version => 20130415000407) do
 
   create_table "contacts", :force => true do |t|
     t.string   "name"
@@ -46,6 +46,10 @@ ActiveRecord::Schema.define(:version => 20130413153054) do
     t.string   "attached_image_content_type"
     t.integer  "attached_image_file_size"
     t.datetime "attached_image_updated_at"
+    t.string   "attached_pdf_file_name"
+    t.string   "attached_pdf_content_type"
+    t.integer  "attached_pdf_file_size"
+    t.datetime "attached_pdf_updated_at"
   end
 
   create_table "users", :force => true do |t|
