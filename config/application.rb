@@ -14,6 +14,7 @@ module PropertyPortal
   class Application < Rails::Application
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
     config.encoding = "utf-8"
+    config.assets.precompile += [ /\w+\.(?!css).+/, /\w+\.js$/ ]
     config.filter_parameters += [:password]
     config.active_support.escape_html_entities_in_json = true
     config.active_record.whitelist_attributes = true
