@@ -14,6 +14,7 @@ module PropertyPortal
   class Application < Rails::Application
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
     config.encoding = "utf-8"
+    config.autoload_paths += %W(#{Rails.root}/lib)
     config.assets.precompile += [ /\w+\.(?!css).+/, /\w+\.js$/ ]
     config.filter_parameters += [:password]
     config.assets.initialize_on_precompile = false

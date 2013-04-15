@@ -4,8 +4,8 @@ class PropertiesController < ApplicationController
 
   expose(:property)
   expose(:deco_property) { PropertyDecorator.new(property) }
-  expose(:properties_for_sale) { Property.where(sale: true) }
-  expose(:properties_for_lease) { Property.where(lease: true) }
+  expose(:properties_for_sale) { Property.where(sale: true).decorate }
+  expose(:properties_for_lease) { Property.where(lease: true).decorate }
 
   def create
     property.save

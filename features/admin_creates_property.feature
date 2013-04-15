@@ -17,13 +17,13 @@ Feature: Admin creates property
       | Size        | 4 acres                        |
       | Price       | $1000 a month                  |
     And I select "Georgia" from "State"
-    And I select "Office" from "Property type"
+    And I select "Office" from "Property Type"
     And I check "Mike the Man"
     And I check "Ted McAwesome"
     And I check "Lease"
     And I check "Bank owned?"
-    And I attach the file at "features/support/test-image.jpg" to "Attached image"
-    And I attach the file at "features/support/test-pdf.pdf" to "Attached pdf"
+    And I attach the file at "features/support/test-image.jpg" to "Attached Image"
+    And I attach the file at "features/support/test-pdf.pdf" to "Attached PDF"
     When I press "Add Property"
     Then I should be on that properties show page
     And I should see the image "test-image.jpg"

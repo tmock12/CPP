@@ -28,6 +28,10 @@ class PropertyDecorator < Draper::Decorator
     end
   end
 
+  def availability
+    [sale, lease, bank_owned].select(&:present?).join(', ')
+  end
+
   def sale
     "For Sale" if model.sale?
   end
