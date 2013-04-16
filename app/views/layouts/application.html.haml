@@ -8,9 +8,11 @@
   %body
     %header
       - if current_user
-        %p Welcome #{current_user.name}
-        = link_to "dashboard", :dashboard
-        = link_to "sign out", :sign_out
+        .admin_header
+          Welcome #{current_user.name}
+          = link_to "dashboard", :dashboard
+          = link_to "sign out", :sign_out
+      = image_tag "cpp_header.png"
       .property_links
         = link_to "Properties for sale", for_sale_properties_path, class: active_link?(for_sale_properties_path)
         = link_to "Properties for lease", for_lease_properties_path, class: active_link?(for_lease_properties_path)

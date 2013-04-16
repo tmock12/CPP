@@ -2,12 +2,31 @@
   .property
     .property_image
       = image_tag property.attached_image.url(:small)
-    %ul
-      %li
+      = link_to "View PDF", property.attached_pdf.url, target: :blank
+    %dl
+      %dt
         %h2= property.title
-      %li
+      %dt
         %h3= property.availability
-      %li
+      %dt
         %p= property.description
-      %li
-        =link_to "View PDF", property.attached_pdf.url
+      %table
+        %tbody
+          %tr
+            %td
+              %strong Address:
+            %td= property.formatted_address
+          %tr
+            %td
+              %strong Size:
+            %td= property.size
+          %tr
+            %td
+              %strong Price:
+            %td= property.price
+          %tr
+            %td
+              %strong Contact:
+            %td
+              - property.contacts.each do |contact|
+                %p= [contact.name, contact.cell, (mail_to(contact.email) if contact.email)].select(&:present?).join(', ').html_safe
