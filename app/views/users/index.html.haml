@@ -1,2 +1,10 @@
 %h1 Admin dashboard
+
+%h3 Properties
 = link_to "Add new property", :new_property
+%table
+  %tbody
+    - properties.each do |property|
+      %tr
+        %td= property.title
+        %td= link_to "Edit", edit_property_path(property)

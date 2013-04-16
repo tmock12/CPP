@@ -11,5 +11,6 @@ class PropertiesController < ApplicationController
     property.save
     respond_with property
   end
+  alias update create
 
 end
