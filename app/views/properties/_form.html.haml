@@ -39,14 +39,17 @@
     %dt= f.label :property_type
     %dd= f.select :property_type, property_type_options_for_select
 
-    %dt= f.label :lease
-    %dd= f.check_box :lease
+    %dd
+      = f.check_box :lease
+      = f.label :lease, 'For lease?'
 
-    %dt= f.label :sale
-    %dd= f.check_box :sale
+    %dd
+      = f.check_box :sale
+      = f.label :sale, 'For sale?'
 
-    %dt= f.label :bank_owned, 'Bank owned?'
-    %dd= f.check_box :bank_owned
+    %dd
+      = f.check_box :bank_owned
+      = f.label :bank_owned, 'Bank owned?'
 
     %dt= f.label :attached_image
     %dd= f.file_field :attached_image
