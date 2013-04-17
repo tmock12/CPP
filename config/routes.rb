@@ -12,5 +12,5 @@ PropertyPortal::Application.routes.draw do
 
   get '/dashboard', to: 'users#index'
 
-  root to: 'pages#index'
+  root to: 'properties#index'
 end

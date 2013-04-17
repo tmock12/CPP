@@ -1,4 +1,4 @@
-= form_tag :admin do
+= form_tag :admin, class: :login do
   %dl
     %dt= label_tag :email
     %dd= email_field_tag :email, params[:email]
