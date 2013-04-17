@@ -13,4 +13,9 @@ class PropertiesController < ApplicationController
   end
   alias update create
 
+  def destroy
+    property.destroy
+    redirect_to :dashboard
+  end
+
 end

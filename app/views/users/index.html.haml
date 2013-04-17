@@ -8,3 +8,4 @@
       %tr
         %td= property.title
         %td= link_to "Edit", edit_property_path(property)
+        %td= link_to "Delete", property, confirm: "Are you sure you want to delete #{property.title}?", method: :delete
