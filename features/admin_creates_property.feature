@@ -20,7 +20,7 @@ Feature: Admin creates property
     And I select "Office" from "Property Type"
     And I check "Mike the Man"
     And I check "Ted McAwesome"
-    And I check "Lease"
+    And I check "For lease?"
     And I check "Bank owned?"
     And I attach the file at "features/support/test-image.jpg" to "Attached Image"
     And I attach the file at "features/support/test-pdf.pdf" to "Attached PDF"

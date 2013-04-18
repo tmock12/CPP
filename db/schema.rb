@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130415000407) do
+ActiveRecord::Schema.define(:version => 20130418014735) do
 
   create_table "contacts", :force => true do |t|
     t.string   "name"
@@ -50,6 +50,9 @@ ActiveRecord::Schema.define(:version => 20130415000407) do
     t.string   "attached_pdf_content_type"
     t.integer  "attached_pdf_file_size"
     t.datetime "attached_pdf_updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.boolean  "gmaps"
   end
 
   create_table "users", :force => true do |t|
