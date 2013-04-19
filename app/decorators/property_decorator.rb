@@ -10,6 +10,13 @@ class PropertyDecorator < Draper::Decorator
     }.html_safe
   end
 
+  def self.google_map
+    source.to_gmaps4rails do |property, marker|
+      marker.infowindow render_to_string(:partial => "/properties/property", :locals => { :property => property})
+      marker.title   property.title
+    end
+  end
+
   def street_1
     if source.street_1.present?
       h.content_tag(:dd) { source.street_1 }

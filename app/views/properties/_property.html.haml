@@ -1,0 +1,5 @@
+%strong= property.title
+%p  #{property.property_type}  #{property.availability}
+%p For more info contact:
+- property.contacts.each do |contact|
+  %p= [contact.name, contact.cell, (mail_to(contact.email) if contact.email)].select(&:present?).join(', ').html_safe
