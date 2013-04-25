@@ -1,2 +1,3 @@
-= google_map(properties_for_sale)
-= render 'table', properties: properties_for_sale
+= google_map(properties_for_sale.decorate)
+= render 'table', properties: properties_for_sale.decorate
+= will_paginate properties_for_sale

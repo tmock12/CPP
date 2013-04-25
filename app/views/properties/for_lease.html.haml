@@ -1,2 +1,3 @@
-= google_map(properties_for_lease)
-= render 'table', properties: properties_for_lease
+= google_map(properties_for_lease.decorate)
+= render 'table', properties: properties_for_lease.decorate
+= will_paginate properties_for_lease
