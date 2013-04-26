@@ -2,7 +2,7 @@
   .property
     .property_image
       = image_tag property.attached_image.url(:small)
-      = link_to "View PDF", property.attached_pdf.url, target: :blank
+      = link_to "View Flyer", property.attached_pdf.url, target: :blank
     %dl
       %dt
         %h2= property.title
