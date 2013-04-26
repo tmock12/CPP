@@ -10,7 +10,6 @@ Feature: Admin creates property
     When I follow "Add new property"
     And I fill in the following:
       | Title       | Awesome Building               |
-      | Description | This building is super awesome |
       | Address     | 123 happy lane                 |
       | City        | Atlanta                        |
       | Zip Code    | 30328                          |

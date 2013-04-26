@@ -12,14 +12,14 @@ Feature: Visitor view properties
       | lease       | true                   |
 
   Scenario: for sale
-    When I follow "Properties for sale"
+    When I follow "Properties for Sale"
     Then I should be on the for sale properties page
     And I should see "Awesome Building"
     And I should see "this place is the bomb"
     And I should not see "Awesome Lease"
 
   Scenario: for lease
-    When I follow "Properties for lease"
+    When I follow "Properties for Lease"
     Then I should be on the for lease properties page
     And I should see "Awesome lease"
     And I should see "this place is the bomb"

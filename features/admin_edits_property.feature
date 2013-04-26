@@ -19,7 +19,6 @@ Feature: Admin edits property
     And I follow "Edit"
     And I fill in the following:
       | Title       | Good Building                |
-      | Description | This building is pretty good |
       | Address     | 100 good street              |
       | City        | Atlanta                      |
       | Zip Code    | 30328                        |
@@ -27,7 +26,6 @@ Feature: Admin edits property
     When I press "Update Property"
     Then I should see the following:
       | Good Building                |
-      | This building is pretty good |
       | 100 good street              |
       | Atlanta                      |
       | 30328                        |
