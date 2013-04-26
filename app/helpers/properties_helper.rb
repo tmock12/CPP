@@ -4,6 +4,18 @@ module PropertiesHelper
     options_for_select( %w(Office Land Industrial Retail) )
   end
 
+  def submarket_options_for_select
+    options_for_select(
+      ['I-20 East',
+       'I-20 West',
+       'Intown',
+       'North Central',
+       'Northeast',
+       'Northwest',
+       'Southside']
+    )
+  end
+
   def google_map(properties)
     gmaps4rails(property_map_window(properties))
   end

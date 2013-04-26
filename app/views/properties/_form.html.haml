@@ -17,6 +17,9 @@
     %dt= f.label :zip, "Zip Code"
     %dd= f.text_field :zip
 
+    %dt= f.label :submarket
+    %dd= f.select :submarket, submarket_options_for_select
+
     %dt= f.label :size
     %dd= f.text_field :size
 
