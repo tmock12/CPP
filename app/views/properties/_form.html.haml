@@ -18,7 +18,7 @@
     %dd= f.text_field :zip
 
     %dt= f.label :submarket
-    %dd= f.select :submarket, submarket_options_for_select
+    %dd= f.select :submarket, submarket_options_for_select(property.submarket)
 
     %dt= f.label :size
     %dd= f.text_field :size
@@ -37,7 +37,7 @@
     %dd= f.text_field :price
 
     %dt= f.label :property_type
-    %dd= f.select :property_type, property_type_options_for_select
+    %dd= f.select :property_type, property_type_options_for_select(property.property_type)
 
     %dd
       = f.check_box :lease

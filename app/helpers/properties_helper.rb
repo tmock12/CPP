@@ -1,10 +1,10 @@
 module PropertiesHelper
 
-  def property_type_options_for_select
-    options_for_select( %w(Office Land Industrial Retail) )
+  def property_type_options_for_select(property_type = "Office")
+    options_for_select( %w(Office Land Industrial Retail), selected: property_type )
   end
 
-  def submarket_options_for_select
+  def submarket_options_for_select(submarket = "I-20 East")
     options_for_select(
       ['I-20 East',
        'I-20 West',
@@ -12,7 +12,8 @@ module PropertiesHelper
        'North Central',
        'Northeast',
        'Northwest',
-       'Southside']
+       'Southside'],
+       selected: submarket
     )
   end
 
