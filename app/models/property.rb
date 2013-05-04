@@ -1,4 +1,5 @@
 class Property < ActiveRecord::Base
+  TYPES = %w(Office Land Industrial Retail)
   has_and_belongs_to_many :contacts
   attr_accessible :city, :description, :sale, :lease, :price, :bank_owned,
     :property_type, :size, :state, :street_1, :street_2, :title, :zip, :submarket,
@@ -13,6 +14,14 @@ class Property < ActiveRecord::Base
   validates_presence_of :lease, unless: :sale?, message: "Please choose Sale, Lease, or Both"
 
   acts_as_gmappable
+
+  def self.filtered_by(params)
+    by_property_type(params[:property_type])
+  end
+
+  def self.by_property_type(type)
+    type.present? ? where(property_type: type) : scoped
+  end
 
   def gmaps4rails_address
     "#{self.street_1}, #{self.city}, #{self.state}, #{self.zip}"

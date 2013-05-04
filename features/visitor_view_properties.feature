@@ -24,3 +24,21 @@ Feature: Visitor view properties
     And I should see "Awesome lease"
     And I should see "this place is the bomb"
     And I should not see "Awesome Building"
+
+  @javascript
+  Scenario Outline: filtered by property type
+    Given the following property:
+      | title         | Good View       |
+      | sale          | true            |
+      | lease         | true            |
+      | property type | <property type> |
+    When I am on the <page> properties page
+    And I select "<property type>" from "property_type"
+    Then I should see "Good View"
+    But I should not see "Awesome Building"
+
+  Scenarios:
+      | property type | page      |
+      | Office        | for sale  |
+      | Land          | for lease |
+      | Industrial    | for sale  |
