@@ -5,7 +5,18 @@ module PropertiesHelper
   end
 
   def property_type_options_for_filter_select(property_type = "All Properties")
-    options_for_select( [['All Properties', '']] + Property::TYPES.map{ |t| [t.titleize, t]}, selected: property_type )
+    options_for_select( [['All Properties', '']] + 
+                       Property::TYPES.map{ |t| [t.titleize, t]},
+                       selected: property_type
+                      )
+  end
+
+  def submarket_options_for_filter_select(submarket = "All Submarkets")
+    options_for_select(
+                       [['All Submarkets', '']] +
+                       Property::SUBMARKETS.map{ |s| [s.titleize, s]},
+                       selected: submarket
+                      )
   end
 
   def submarket_options_for_select(submarket = "I-20 East")

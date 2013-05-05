@@ -32,13 +32,16 @@ Feature: Visitor view properties
       | sale          | true            |
       | lease         | true            |
       | property type | <property type> |
+      | submarket     | I-20 East       |
     When I am on the <page> properties page
     And I select "<property type>" from "property_type"
     Then I should see "Good View"
     But I should not see "Awesome Building"
+    When I select "<submarket>" from "submarket"
+    Then I <visible> see "Good View"
 
   Scenarios:
-      | property type | page      |
-      | Office        | for sale  |
-      | Land          | for lease |
-      | Industrial    | for sale  |
+      | property type | page      | submarket | visible    |
+      | Office        | for sale  | I 20 East | should     |
+      | Land          | for lease | Intown    | should not |
+      | Industrial    | for sale  | I 20 East | should     |

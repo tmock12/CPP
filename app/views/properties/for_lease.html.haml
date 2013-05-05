@@ -4,5 +4,9 @@
   %fieldset
     %label Filter Results:
     = select_tag "property_type", property_type_options_for_filter_select(params[:property_type])
-= render 'table', properties: properties_for_lease.decorate
+    = select_tag "submarket", submarket_options_for_filter_select(params[:submarket])
+- if properties_for_lease.present?
+  = render 'table', properties: properties_for_lease.decorate
+-else
+  = render 'properties/no_properties_found'
 = will_paginate properties_for_lease

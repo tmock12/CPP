@@ -1,5 +1,7 @@
 class Property < ActiveRecord::Base
   TYPES = %w(Office Land Industrial Retail)
+  SUBMARKETS = ['I-20 East', 'I-20 West', 'Intown', 'North Central', 'Northeast', 'Northwest', 'Southside']
+
   has_and_belongs_to_many :contacts
   attr_accessible :city, :description, :sale, :lease, :price, :bank_owned,
     :property_type, :size, :state, :street_1, :street_2, :title, :zip, :submarket,
@@ -16,11 +18,15 @@ class Property < ActiveRecord::Base
   acts_as_gmappable
 
   def self.filtered_by(params)
-    by_property_type(params[:property_type])
+    by_property_type(params[:property_type]).by_submarket(params[:submarket])
   end
 
   def self.by_property_type(type)
     type.present? ? where(property_type: type) : scoped
+  end
+
+  def self.by_submarket(submarket)
+    submarket.present? ? where(submarket: submarket) : scoped
   end
 
   def gmaps4rails_address
