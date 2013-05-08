@@ -43,4 +43,8 @@ module PropertiesHelper
     end
   end
 
+  def filter_display_status
+    'none' unless params[:property_types].present? || params[:bank_owned].present? || params[:submarkets].present?
+  end
+
 end

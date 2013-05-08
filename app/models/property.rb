@@ -18,15 +18,19 @@ class Property < ActiveRecord::Base
   acts_as_gmappable
 
   def self.filtered_by(params)
-    by_property_type(params[:property_type]).by_submarket(params[:submarket])
+    by_property_types(params[:property_types]).by_submarkets(params[:submarkets]).by_bank_owned(params[:bank_owned])
   end
 
-  def self.by_property_type(type)
-    type.present? ? where(property_type: type) : scoped
+  def self.by_bank_owned(bank)
+    bank.present? ? where(bank_owned: true) : scoped
   end
 
-  def self.by_submarket(submarket)
-    submarket.present? ? where(submarket: submarket) : scoped
+  def self.by_property_types(types)
+    types.present? ? where(property_type: types) : scoped
+  end
+
+  def self.by_submarkets(submarkets)
+    submarkets.present? ? where(submarket: submarkets) : scoped
   end
 
   def gmaps4rails_address

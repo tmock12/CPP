@@ -1,0 +1,26 @@
+%button.toggle_search Show Advanced Search Options
+%form.filters{ style: "display: #{filter_display_status}"}(action="" method="get")
+  %dl
+    %dt= label_tag :submarket
+    %dd
+      - Property::SUBMARKETS.each do |submarket|
+        %label
+          = check_box_tag "submarkets[]",
+            submarket,
+            (params[:submarkets].include?(submarket) if params[:submarkets])
+          = label_tag submarket, submarket.titleize
+
+    %dt= label_tag :property_type, "Property Type"
+    %dd
+      - Property::TYPES.each do |property_type|
+        %label
+          = check_box_tag "property_types[]",
+            property_type,
+            (params[:property_types].include?(property_type) if params[:property_types])
+          = label_tag property_type
+      %label
+        = check_box_tag :bank_owned, true, params[:bank_owned].present?
+        = label_tag "Bank Owned", "Bank Owned"
+
+    %dt= submit_tag "Filter Properties"
+
