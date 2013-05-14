@@ -12,7 +12,8 @@
           Welcome #{current_user.name}
           = link_to "dashboard", :dashboard
           = link_to "sign out", :sign_out
-      = image_tag "cpp_header.png"
+      = link_to "http://www.cpprofessionals.com/", class: 'logo-link' do
+        = image_tag "cpp_header.png"
       .property_links
         = link_to "Properties for Sale", for_sale_properties_path, class: active_link?(for_sale_properties_path)
         = link_to "Properties for Lease", for_lease_properties_path, class: active_link?(for_lease_properties_path)
