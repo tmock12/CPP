@@ -5,28 +5,6 @@
       = link_to "View Flyer", property.attached_pdf.url, target: :blank
     %dl
       %dt
-        %h2= property.title
-      %dt
-        %h3 #{property.property_type}  #{property.availability}
-      %dt
-        %p= simple_format(property.description)
-      %table
-        %tbody
-          %tr
-            %td
-              %strong Address:
-            %td= property.formatted_address
-          %tr
-            %td
-              %strong Size:
-            %td= property.size
-          %tr
-            %td
-              %strong Price:
-            %td= property.price
-          %tr
-            %td
-              %strong Contact:
-            %td
-              - property.contacts.each do |contact|
-                %p= [contact.name, contact.cell, (mail_to(contact.email) if contact.email)].select(&:present?).join(', ').html_safe
+        %h2
+          =link_to property.title, property
+    =render 'property', property: property

@@ -1,6 +1,5 @@
 Feature: Visitor view property
 
-  @wip
   Scenario:
     Given the following property:
       | Title       | Awesome Building               |

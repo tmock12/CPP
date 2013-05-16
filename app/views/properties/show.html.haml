@@ -1,28 +1,9 @@
-%h2= deco_property.title
-%p= deco_property.description
-=link_to image_tag(deco_property.attached_image.url(:small)),
-  image_path(deco_property.attached_image.url)
-=link_to "View PDF", property.attached_pdf.url
-
-%dl
-  %dd= deco_property.bank_owned
-  %dd= deco_property.lease
-  %dd= deco_property.sale
-
-  %dt
-    %strong Location:
-  %dd= deco_property.formatted_address
-
-  %dt
-    %strong Size:
-  %dd= deco_property.size
-
-  %dt
-    %strong Price:
-  %dd= deco_property.price
-
-  %dt
-    %strong Contact:
-  - deco_property.contacts.each do |contact|
-    %dd
-      = [contact.name, contact.cell, contact.email].select(&:present?).join(', ')
+=gmaps4rails(deco_property.to_gmaps4rails)
+.property.property-show
+  .property_image
+    = image_tag property.attached_image.url(:small)
+    = link_to "View Flyer", property.attached_pdf.url, target: :blank
+  %dl
+    %dt
+      %h2= property.title
+  =render 'property', property: deco_property

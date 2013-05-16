@@ -77,6 +77,15 @@ header
     input[type="submit"]
       margin-top: 15px
 
+  .property-show
+    padding: 10px
+    a
+      color: blue
+    h2
+      color: #002654
+    dt
+      margin-top: 10px
+
   .property
     height: 100%
     min-height: 230px
@@ -98,11 +107,15 @@ header
         box-shadow:         0px 0px 30px rgba(0, 50, 50, 0.12)
     dt
       margin-bottom: 2px
-      h2
-        font-size: 25px
+    h2
+      font-size: 25px
+      a
+        text-decoration: none
         color: #002654
-      p
-        padding-bottom: 5px
+        &:hover
+          color: #2c6407
+    p
+      padding-bottom: 5px
 
   .admin
     .properties
@@ -149,3 +162,6 @@ header
     color: black
     .pagination a:hover, .pagination a:focus
       text-decoration: underline
+
+.footer
+  height: 25px

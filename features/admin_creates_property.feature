@@ -27,4 +27,4 @@ Feature: Admin creates property
     When I press "Add Property"
     Then I should be on that properties show page
     And I should see the image "test-image.jpg"
-    And I should see a link to "View PDF"
+    And I should see a link to "View Flyer"
