@@ -34,7 +34,7 @@ Feature: Visitor view properties
       | property type | <property type> |
       | submarket     | I-20 East       |
     When I am on the <page> properties page
-    And I press "Show Advanced Search Options"
+    And I press "Show Search Options"
     And I check "<property type>"
     And I press "Filter Properties"
     Then I should see "Good View"
