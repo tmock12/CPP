@@ -1,7 +1,12 @@
 .toggle_search_div
   %button.toggle_search Show Search Options
 %form.filters{ style: "display: #{filter_display_status}"}(action="" method="get")
+
   %dl
+
+    %dt= label_tag :title, "Find by Name"
+    %dd= text_field_tag :title, params[:title]
+
     %dt= label_tag :submarket
     %dd
       - Property::SUBMARKETS.each do |submarket|

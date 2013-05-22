@@ -18,7 +18,18 @@ class Property < ActiveRecord::Base
   acts_as_gmappable
 
   def self.filtered_by(params)
-    by_property_types(params[:property_types]).by_submarkets(params[:submarkets]).by_bank_owned(params[:bank_owned])
+    by_title(params[:title])
+    .by_property_types(params[:property_types])
+    .by_submarkets(params[:submarkets])
+    .by_bank_owned(params[:bank_owned])
+  end
+
+  def self.by_title(title)
+    if title.present?
+      where("title ilike ?", "%#{title}%")
+    else
+      scoped
+    end
   end
 
   def self.by_bank_owned(bank)
