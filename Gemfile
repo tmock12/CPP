@@ -11,6 +11,7 @@ gem 'decent_exposure'
 gem 'draper'
 gem 'paperclip'
 gem 'will_paginate'
+gem 'capybara-webkit'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
