@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'aws-sdk'
+gem 'active_model_serializers'
 gem 'authem'
 gem 'rails', '3.2.13'
 gem 'pg'
