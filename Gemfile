@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'active_model_serializers'
 gem 'aws-sdk'
 gem 'authem'
 gem 'rails', '3.2.13'

@@ -17,6 +17,10 @@ class Property < ActiveRecord::Base
 
   acts_as_gmappable
 
+  def self.sampler
+    [where(sale: true).sample, where(lease: true).sample, where(property_type: "Land").sample]
+  end
+
   def self.filtered_by(params)
     by_title(params[:title])
     .by_property_types(params[:property_types])
