@@ -21,6 +21,26 @@ class Property < ActiveRecord::Base
     [where(sale: true).sample, where(lease: true).sample, where(property_type: "Land").sample]
   end
 
+  def self.sorted
+    sorted_properties_with_numbers + properties_without_numbers
+  end
+
+  def self.all_properties
+    Property.order("LOWER(title)")
+  end
+
+  def self.properties_with_numbers
+    all_properties.select { |p| p.title[/\A\d+/] }
+  end
+
+  def self.properties_without_numbers
+    all_properties - properties_with_numbers
+  end
+
+  def self.sorted_properties_with_numbers
+    properties_with_numbers.sort { |a, b| a.title.to_i <=> b.title.to_i }
+  end
+
   def self.filtered_by(params)
     by_title(params[:title])
     .by_property_types(params[:property_types])
