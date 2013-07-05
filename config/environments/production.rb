@@ -8,6 +8,7 @@ PropertyPortal::Application.configure do
   config.assets.digest = true
   config.i18n.fallbacks = true
   config.active_support.deprecation = :notify
+  config.eager_load = true
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {

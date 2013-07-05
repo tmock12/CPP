@@ -3,9 +3,6 @@ class Property < ActiveRecord::Base
   SUBMARKETS = ['I-20 East', 'I-20 West', 'Intown', 'North Central', 'Northeast', 'Northwest', 'Southside']
 
   has_and_belongs_to_many :contacts
-  attr_accessible :city, :description, :sale, :lease, :price, :bank_owned,
-    :property_type, :size, :state, :street_1, :street_2, :title, :zip, :submarket,
-    :attached_image, :contact_ids, :attached_pdf, :latitude, :longitude
 
   has_attached_file :attached_image,
     styles: { small: "200x150#", large: "640x480"},
@@ -52,20 +49,20 @@ class Property < ActiveRecord::Base
     if title.present?
       where("title ilike ?", "%#{title}%")
     else
-      scoped
+      all
     end
   end
 
   def self.by_bank_owned(bank)
-    bank.present? ? where(bank_owned: true) : scoped
+    bank.present? ? where(bank_owned: true) : all
   end
 
   def self.by_property_types(types)
-    types.present? ? where(property_type: types) : scoped
+    types.present? ? where(property_type: types) : all
   end
 
   def self.by_submarkets(submarkets)
-    submarkets.present? ? where(submarket: submarkets) : scoped
+    submarkets.present? ? where(submarket: submarkets) : all
   end
 
   def gmaps4rails_address
