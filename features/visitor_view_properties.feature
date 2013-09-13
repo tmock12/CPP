@@ -28,11 +28,11 @@ Feature: Visitor view properties
   @javascript
   Scenario Outline: filtered by property type
     Given the following property:
-      | title         | Good View       |
-      | sale          | true            |
-      | lease         | true            |
-      | property type | <property type> |
-      | submarket     | I-20 East       |
+      | title          | Good View       |
+      | sale           | true            |
+      | lease          | true            |
+      | submarket      | I-20 East       |
+    And that property has the type "<property type>"
     When I am on the <page> properties page
     And I press "Show Search Options"
     And I check "<property type>"

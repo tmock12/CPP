@@ -36,9 +36,18 @@
     %dt= f.label :price
     %dd= f.text_field :price
 
-    %dt= f.label :property_type
-    %dd= f.select :property_type, property_type_options_for_select(property.property_type)
+    %dt
+      %label Property Types
+    - Property::TYPES.each do |property_type|
+      %dd
+        = check_box_tag "property[property_types][]",
+          property_type,
+          property.property_types.try(:include?,property_type),
+          id: property_type
+        = label_tag property_type
 
+    %dt
+      %label Options
     %dd
       = f.check_box :lease
       = f.label :lease, 'For lease?'

@@ -16,7 +16,8 @@ Feature: Admin creates property
       | Size        | 4 acres                        |
       | Price       | $1000 a month                  |
     And I select "Georgia" from "State"
-    And I select "Retail" from "Property Type"
+    And I check "Retail"
+    And I check "Land"
     And I select "I-20 East" from "Submarket"
     And I check "Mike the Man"
     And I check "Ted McAwesome"

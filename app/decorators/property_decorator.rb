@@ -35,6 +35,10 @@ class PropertyDecorator < Draper::Decorator
     end
   end
 
+  def property_types
+    model.property_types.try(:join,"/")
+  end
+
   def availability
     [sale, lease, bank_owned].select(&:present?).join(', ')
   end

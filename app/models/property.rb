@@ -58,7 +58,7 @@ class Property < ActiveRecord::Base
   end
 
   def self.by_property_types(types)
-    types.present? ? where(property_type: types) : all
+    types.present? ? where("ARRAY[?]::varchar[] && property_types", types) : all
   end
 
   def self.by_submarkets(submarkets)
