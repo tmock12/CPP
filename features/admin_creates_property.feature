@@ -21,7 +21,8 @@ Feature: Admin creates property
     And I select "I-20 East" from "Submarket"
     And I check "Mike the Man"
     And I check "Ted McAwesome"
-    And I check "For lease?"
+    And I check "For sale?"
+    And I check "For sublease?"
     And I check "Bank owned?"
     And I attach the file at "features/support/test-image.jpg" to "Attached Image"
     And I attach the file at "features/support/test-pdf.pdf" to "Attached PDF"
@@ -29,3 +30,4 @@ Feature: Admin creates property
     Then I should be on that properties show page
     And I should see the image "test-image.jpg"
     And I should see a link to "View PDF"
+    And I should see "For Sublease"

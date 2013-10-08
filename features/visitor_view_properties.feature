@@ -48,3 +48,15 @@ Feature: Visitor view properties
       | Office        | for sale  | I 20 East | should     |
       | Land          | for lease | Intown    | should not |
       | Industrial    | for sale  | I 20 East | should     |
+
+  Scenario: sublease shows on lease page
+    Given the following property:
+      | title     | Good View |
+      | sale      | false     |
+      | lease     | false     |
+      | sublease  | true      |
+      | submarket | I-20 East |
+    When I am on the for sale properties page
+    Then I should not see "Good View"
+    When I am on the for lease properties page
+    Then I should see "Good View"

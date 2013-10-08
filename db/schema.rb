@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130913000045) do
+ActiveRecord::Schema.define(version: 20131008001554) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(version: 20130913000045) do
     t.string   "price"
     t.string   "property_type"
     t.boolean  "bank_owned"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
     t.boolean  "lease"
     t.boolean  "sale"
     t.string   "attached_image_file_name"
@@ -58,7 +58,8 @@ ActiveRecord::Schema.define(version: 20130913000045) do
     t.float    "longitude"
     t.boolean  "gmaps"
     t.string   "submarket"
-    t.string   "property_types",                           array: true
+    t.string   "property_types",                                           array: true
+    t.boolean  "sublease",                    default: false
   end
 
   create_table "users", force: true do |t|

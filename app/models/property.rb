@@ -9,8 +9,15 @@ class Property < ActiveRecord::Base
     default_url:  "missing/small.png"
   has_attached_file :attached_pdf
 
-  validates_presence_of :sale, unless: :lease?, message: "Please choose Sale, Lease, or Both"
-  validates_presence_of :lease, unless: :sale?, message: "Please choose Sale, Lease, or Both"
+  validates_presence_of :sale,
+    unless: Proc.new { lease? || sublease? },
+    message: "Please choose Sale, Lease, Sublease or all"
+  validates_presence_of :lease,
+    unless: Proc.new { sale? || sublease? },
+    message: "Please choose Sale, Lease, Sublease or all"
+  validates_presence_of :sublease,
+    unless: Proc.new { sale? || lease? },
+    message: "Please choose Sale, Lease, Sublease or all"
 
   acts_as_gmappable
 

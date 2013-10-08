@@ -40,7 +40,7 @@ class PropertyDecorator < Draper::Decorator
   end
 
   def availability
-    [sale, lease, bank_owned].select(&:present?).join(', ')
+    [sale, lease, sublease, bank_owned].select(&:present?).join(', ')
   end
 
   def sale
@@ -49,6 +49,10 @@ class PropertyDecorator < Draper::Decorator
 
   def lease
     "For Lease" if model.lease?
+  end
+
+  def sublease
+    "For Sublease" if model.sublease?
   end
 
   def bank_owned
