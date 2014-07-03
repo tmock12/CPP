@@ -8,6 +8,7 @@ class Property < ActiveRecord::Base
     styles: { small: "200x150#", large: "640x480"},
     default_url:  "missing/small.png"
   has_attached_file :attached_pdf
+  do_not_validate_attachment_file_type :attached_pdf, :attached_image
 
   validates_presence_of :sale,
     unless: Proc.new { lease? || sublease? },
