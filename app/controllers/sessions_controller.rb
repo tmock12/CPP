@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
 
   def create
     if user && user.authenticate(params[:password])
-      sign_in(user, false)
+      sign_in(user)
       redirect_to :dashboard
     else
       flash.now[:sign_in_error] = "Your email or password are incorrect"
@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    sign_out
+    sign_out_user
     redirect_to :root, notice: "You are now signed out"
   end
 
