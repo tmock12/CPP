@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.1.0'
 #ruby-gemset=property_portal
 
 gem 'active_model_serializers'
