@@ -18,7 +18,7 @@ gem 'will_paginate'
 group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'uglifier'
 end
 
 group :test do
@@ -29,7 +29,7 @@ group :test do
 end
 
 group :development, :test do
-  gem 'rspec-rails','~> 2.99.0'
+  gem 'rspec-rails'
   gem 'pry-rails'
 end
 

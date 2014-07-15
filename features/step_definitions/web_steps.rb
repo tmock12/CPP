@@ -3,7 +3,7 @@ Given /^(?:|I )am on (.+)$/ do |page_name|
 end
 
 Given /^(?:|I )should be on (.+)/ do |page_name|
-  URI.parse(current_url).path.should == path_to(page_name)
+  expect(URI.parse(current_url).path).to eq(path_to(page_name))
 end
 
 When /^(?:|I )fill in the following:$/ do |fields|
@@ -21,7 +21,7 @@ When /^I press "(.*?)"$/ do |button|
 end
 
 Then /^I should see "(.*?)"$/ do |text|
-  page.should have_content(text)
+  expect(page).to have_content(text)
 end
 
 Then /^I should see a link to "(.*?)"$/ do |text|
@@ -31,13 +31,13 @@ end
 Then /^I should see the following:$/ do |table|
   table.rows.each do |row|
     row.each do |col|
-      page.should have_content(col)
+      expect(page).to have_content(col)
     end
   end
 end
 
 Then /^I should not see "(.*?)"$/ do |text|
-  page.should_not have_content(text)
+  expect(page).to_not have_content(text)
 end
 
 When /^I follow "(.*?)"$/ do |link|

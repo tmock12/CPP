@@ -1,8 +1,8 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe Api::PropertiesController do
+describe Api::PropertiesController, type: :controller do
 
-  describe 'index' do
+  describe 'intex' do
     let(:json) { JSON.parse(response.body) }
     before do
       4.times { Fabricate(:property) }
@@ -10,7 +10,7 @@ describe Api::PropertiesController do
     end
 
     it 'returns 3 random properties in json' do
-      json['properties'].length.should == 3
+      expect(json['properties'].length).to eq(3)
     end
   end
 end
