@@ -11,7 +11,7 @@ PropertyPortal::Application.routes.draw do
 
   get '/dashboard', to: 'users#index'
 
-  resources :contacts, only: %i(new create update edit)
+  resources :contacts
 
   scope 'api', module: 'api' do
     resources :properties

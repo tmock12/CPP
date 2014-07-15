@@ -9,6 +9,11 @@ class ContactsController < ApplicationController
   end
   alias update create
 
+  def destroy
+    contact.destroy
+    redirect_to :dashboard
+  end
+
   protected
 
   def contact_params
