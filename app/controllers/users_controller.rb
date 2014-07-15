@@ -3,4 +3,5 @@ class UsersController < ApplicationController
 
   expose(:properties) { Property.sorted }
   expose(:property)
+  expose(:contacts)
 end

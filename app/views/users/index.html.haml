@@ -11,3 +11,12 @@
             %td= property.title
             %td= link_to "Edit", edit_property_path(property)
             %td= link_to "Delete", property, data: { confirm: "Are you sure you want to delete #{property.title}?" }, method: :delete
+
+  .contacts
+    %h3 Contacts
+    %table
+      %tbody
+        - contacts.each do |contact|
+          %tr
+            %td= contact.name
+  .clear
