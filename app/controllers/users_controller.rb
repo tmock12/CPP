@@ -3,8 +3,4 @@ class UsersController < ApplicationController
 
   expose(:properties) { Property.sorted }
   expose(:property)
-
-  private
-
-
 end
