@@ -7,6 +7,7 @@ class ContactsController < ApplicationController
     contact.save
     respond_with contact, location: :dashboard
   end
+  alias update create
 
   protected
 

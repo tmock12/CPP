@@ -16,7 +16,7 @@ Feature: Admin edits property
       | name | Head Honcho |
     When I am signed in as a user
     And I am on the dashboard page
-    And I follow "Edit"
+    And I follow "Edit" within the properties section
     And I fill in the following:
       | Title       | Good Building                |
       | Address     | 100 good street              |

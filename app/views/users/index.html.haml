@@ -20,4 +20,5 @@
         - contacts.each do |contact|
           %tr
             %td= contact.name
+            %td= link_to "Edit", edit_contact_path(contact)
   .clear

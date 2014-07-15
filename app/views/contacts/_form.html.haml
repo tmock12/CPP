@@ -1,0 +1,13 @@
+= form_for contact do |f|
+  %dl
+
+    %dt= f.label :name
+    %dd= f.text_field :name
+
+    %dt= f.label :cell
+    %dd= f.text_field :cell
+
+    %dt= f.label :email
+    %dd= f.email_field :email
+
+    = f.submit f.object.new_record? ? 'Add Contact' : 'Update Contact'
