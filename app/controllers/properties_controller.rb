@@ -3,7 +3,7 @@ class PropertiesController < ApplicationController
   respond_to :html
 
   expose(:property, model: Property, attributes: :property_params)
-  expose(:deco_property) { PropertyDecorator.new(property) }
+  expose(:deco_property) { decorate(property) }
   expose(:properties_for_sale) do
     Property.where(sale: true).filtered_by(params).page(params[:page]).per_page(10)
   end

@@ -1,7 +1,7 @@
-= google_map(properties_for_lease.decorate)
+= google_map(decorate(properties_for_lease))
 = render 'filter_form'
 - if properties_for_lease.present?
-  = render 'table', properties: properties_for_lease.decorate
+  = render 'table', properties: decorate(properties_for_lease)
 -else
   = render 'properties/no_properties_found'
 = will_paginate properties_for_lease

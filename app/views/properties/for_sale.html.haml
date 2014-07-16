@@ -1,7 +1,7 @@
-= google_map(properties_for_sale.decorate)
+= google_map(decorate(properties_for_sale))
 = render 'filter_form'
 - if properties_for_sale.present?
-  = render 'table', properties: properties_for_sale.decorate
+  = render 'table', properties: decorate(properties_for_sale)
 - else
   = render 'properties/no_properties_found'
 = will_paginate properties_for_sale

@@ -1,6 +1,4 @@
-class PropertyDecorator < Draper::Decorator
-  include Draper::LazyHelpers
-  delegate_all
+class PropertyDecorator < LittleDecorator
 
   def formatted_address
     "".tap { |a|
@@ -11,27 +9,27 @@ class PropertyDecorator < Draper::Decorator
   end
 
   def self.google_map
-    source.to_gmaps4rails do |property, marker|
+    to_gmaps4rails do |property, marker|
       marker.infowindow render_to_string(:partial => "/properties/property", :locals => { :property => property})
       marker.title   property.title
     end
   end
 
   def street_1
-    if source.street_1.present?
-      h.content_tag(:dd) { source.street_1 }
+    if model.street_1.present?
+      content_tag(:dd) { model.street_1 }
     end
   end
 
   def street_2
-    if source.street_2.present?
-      h.content_tag(:dd) { source.street_2 }
+    if model.street_2.present?
+      content_tag(:dd) { model.street_2 }
     end
   end
 
   def city_state_zip
-    h.content_tag(:dd) do
-      "#{source.city}, #{source.state} #{source.zip}"
+    content_tag(:dd) do
+      "#{model.city}, #{model.state} #{model.zip}"
     end
   end
 

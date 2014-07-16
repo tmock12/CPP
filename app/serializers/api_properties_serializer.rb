@@ -3,7 +3,7 @@ class ApiPropertiesSerializer < ActiveModel::Serializer
   attributes :title, :attached_pdf, :heading, :attached_image
 
   def heading
-    "#{object.property_type} #{object.decorate.availability}"
+    "#{object.property_type} #{PropertyDecorator.new(object).availability}"
   end
 
   def attached_image
